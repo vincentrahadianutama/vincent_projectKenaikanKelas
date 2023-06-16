@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\CategoriesController;
+use Database\Seeders\SampleAccountsSeeder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,3 +24,4 @@ Route::get("/categories", [CategoriesController::class, 'allCategories']);
 Route::post("/categories/create", [CategoriesController::class, 'createCategories']);
 Route::put("/categories/{categoriesId}/update", [CategoriesController::class, 'updateCategories']);
 Route::delete("/categories/{categoriesId}/delete", [CategoriesController::class, "deleteCategories"]);
+Route::post("/categories/account", [SampleAccountsSeeder::class, "run"]);
