@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+
 use run;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -15,8 +16,8 @@ class SampleAccountsSeeder extends Seeder
     public function run(): void
     {
         User::insert([
-            'name' => 'John Doe',
-            'email' => 'johndoe@example.com',
+            'name' => 'Johan Liebert',
+            'email' => 'jliebert@gmail.com',
             'password' => bcrypt('password'),
         ]);
         
