@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -64,12 +66,14 @@ class AuthController extends Controller
                 'token' => $token,
                 'type' => 'bearer',
             ]
-        ]);
+            ]);
     }
+
+
 
     public function logout()
     {
-        Auth::logout();
+         Auth::logout();
         return response()->json([
             'status' => 'success',
             'message' => 'Successfully logged out',
