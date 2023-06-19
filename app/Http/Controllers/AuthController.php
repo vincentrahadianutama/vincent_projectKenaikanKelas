@@ -66,18 +66,23 @@ class AuthController extends Controller
                 'token' => $token,
                 'type' => 'bearer',
             ]
-            ]);
+        ]);
     }
 
 
 
     public function logout()
     {
-         Auth::logout();
+        Auth::logout();
         return response()->json([
             'status' => 'success',
             'message' => 'Successfully logged out',
-        ]);
+            'user' => Auth::user(),
+            'authorisation' => [
+                'token' => Auth::logout(),
+                'type' => 'bearer',
+        ]
+    ]);
     }
 
     public function refresh()
